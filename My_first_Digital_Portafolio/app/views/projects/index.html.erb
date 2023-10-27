@@ -1,0 +1,44 @@
+<!-- ======= Skills Section ======= -->
+        <div id="skills" class="skills">
+        <div class="container" data-aos="fade-up">
+
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+            <h2>Projects</h2>
+            <p>On this site you can see my completed projects</p>
+            </div>
+
+            <div id="projects" class= "d-flex flex-wrap">
+                <% @projects.each do |project| %>
+                    <section id="services" class="services ">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row">
+                            <div class="d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="icon-box">
+                                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                <% if current_user.role%>
+                                   <h4> <%= link_to "Edit this project", edit_admin_project_path(project) %></h4>
+                                <%end%>
+                                <%= render project %>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </section>
+                <% end %>
+            </div>
+
+<% if current_user.role%>
+    <center><button class= "button2" ><%= link_to "New project", new_admin_project_path %></button></center>
+<%end%>
+
+
+        </div>
+        </section><!-- End Team Section -->
+
+        </div><!-- End Skills Section -->
+
+        <p style="color: green"><%= notice %></p>

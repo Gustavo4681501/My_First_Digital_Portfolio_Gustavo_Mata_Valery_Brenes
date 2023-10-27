@@ -1,0 +1,15 @@
+<h1>Editing skill</h1>
+
+<%= render "form_edit", skill: @skill %>
+
+<br>
+
+<div>
+  <%= link_to "Show this skill", edit_admin_skill_path(@skill) %> |
+  <%= link_to "Back to skills", skills_path %>
+  <li><%= link_to "Destroy", admin_skill_path(@skill), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</div>
+

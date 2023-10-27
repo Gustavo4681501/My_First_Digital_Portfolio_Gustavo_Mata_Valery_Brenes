@@ -1,0 +1,38 @@
+<center><h1>Contact Us</h1></center>
+<br>
+<div class= "container1">
+  <%= form_with(model: @contact, url: contacts_path, local: true) do |form| %>
+
+<form>
+  <div class="field">
+    <%= form.label :name %>
+    <br>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :message %>
+    <br>
+    <%= form.text_area :message, required: true %>
+  </div>
+
+  
+
+    <div class="field">
+    <%= form.label :email %>
+    <br>
+    <%= form.text_area :email, required: true %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>
+
+</form>
+</div>
+

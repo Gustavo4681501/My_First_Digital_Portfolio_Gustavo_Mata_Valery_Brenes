@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @skill_type %>
+
+<div>
+  <%= link_to "Edit this skill type", edit_skill_type_path(@skill_type) %> |
+  <%= link_to "Back to skill types", skill_types_path %>
+
+  <%= button_to "Destroy this skill type", @skill_type, method: :delete %>
+</div>

@@ -1,0 +1,97 @@
+<div>
+    <% if current_user%>
+        <% current_user.role %>
+    <% else %>
+        <%= link_to "login", new_user_session_path%>
+    <%end%>
+
+    <div class= "text-center">
+    <% if current_user.role%>
+        <div class= "container text-">
+            <button class= "button2" ><%= link_to "Edit this user", edit_admin_user_path(current_user.id) %></button>
+        </div>
+    <%end%>
+    </div>
+<br>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h1>¡Welcome to my portfolio!</h1>
+            <h2>Here you can see my skills, projects and contact me.</h2>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+            <img src="https://assets.zyrosite.com/Aq20eV79zLfpXV6b/bb375cdd655184ca2715ac5059e73651-YX4ZEeZEvbhrMMZa.gif" class="img-fluid animated" alt="">
+            </div>
+        </div>
+        </div>
+<style>
+
+</style>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+<!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients section-bg">
+        <div class="container">
+
+            <div class="row" data-aos="zoom-in">
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+            </div>
+
+            </div>
+
+        </div>
+        </section><!-- End Cliens Section -->
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+            <h2>Portfolio <span class="text-secondary"></span></h2>
+            <img class= "image" src="https://img.freepik.com/vector-premium/perfil-avatar-mujer-icono-redondo_24640-14047.jpg" />
+            <h1><% @byuser= User.find(1)%></h1>
+            <h1><%= @byuser.name %></h1>
+            </div>
+
+            <div class="row content">
+            <div class="col-lg-6">
+                <h3>Email:</h3><p><%=@byuser.email%></p>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                    <h3>Description:</h3><p><%=@byuser.description%></p>
+            </div>
+            </div>
+
+        </div>
+        </section><!-- End About Us Section -->
+
+    </main><!-- End #main -->
+</div>
+

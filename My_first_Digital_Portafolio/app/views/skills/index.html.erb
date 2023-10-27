@@ -1,0 +1,48 @@
+
+
+
+<!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+
+
+            <div class="section-title">
+            <h2>Skills</h2>
+            <p>In this section you can see my skills.</p>
+            </div>
+
+            <div id="skills" class= "d-flex flex-wrap">
+                <% @skills.each do |skill| %>
+                    <section id="services" class="services ">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row">
+                            <div class="d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="icon-box">
+                                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                    <% if current_user.role%>
+                                        <h4> <%= link_to "Edit this skill", edit_admin_skill_path(skill) %></h4>
+                                    <%end%>
+                                <%= render skill %>
+                                <%= render SkillType.find(skill.skill_type_id)%>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </section>
+                <% end %>
+            </div>
+
+
+
+            </div>
+
+<% if current_user.role%>
+    <div class = "container text-center">
+        <button class= "button2" ><%= link_to "New skill", new_admin_skill_path %></button>
+    </div>
+<%end%>
+        </div>
+        </section><!-- End Services Section -->
+
+
+
